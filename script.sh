@@ -2,7 +2,7 @@
 
 
 git init
-git remote add origin https://github.com/<DeltionThijs>/<Stationzuil-Thijs>.git
+git remote add origin https://github.com/DeltionThijs/Stationzuil-Thijs.git
 
 git add .
 
