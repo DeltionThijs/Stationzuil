@@ -2,12 +2,19 @@ import tkinter as tk
 import csv
 import psycopg2
 from datetime import datetime
+from dotenv import load_dotenv
+import os
+load_dotenv()
+dbname = os.getenv("dbname")
+user = os.getenv("user")
+password = os.getenv("password")
+host = os.getenv("host")
+port = os.getenv("port")
 
 # Variabelen voor in de onderstaande functies
 csv_bestand = "reviews.csv"
 datum_tijd = datetime.now()
 datum_tijd_str = datum_tijd.strftime("%Y-%m-%d %H:%M:%S")
-
 # Tkinter variabelen
 root = tk.Tk()
 root.configure(bg="#FFFF00")
@@ -19,11 +26,11 @@ text_box.pack()
 def schrijf_naar_database(bericht, goedgekeurd, afgekeurd, moderator_naam, moderator_email):
     # Maak verbinding met de database
     conn = psycopg2.connect(
-        database="stationzuil",
-        user="postgres",
-        password="TJluyt123!",
-        host="51.107.201.216",
-        port="5432")
+        database=dbname,
+        user=user,
+        password=password,
+        host=host,
+        port=port)
     cursor = conn.cursor()
     # Voer de SQL-query uit om de gegevens in de database in te voegen
     cursor.execute(

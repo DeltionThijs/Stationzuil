@@ -6,7 +6,7 @@ git remote set-url origin https://DeltionThijs:ghp_tGrTiTABSNM7kt0Q6E7XE7ya4eg2o
 
 git add .
 
-git commit -m "Stationzuil V0.9"
+git commit -m "Stationzuil V1"
 
 git push origin master  # Dit is voor de standaard branch 'master'.
   

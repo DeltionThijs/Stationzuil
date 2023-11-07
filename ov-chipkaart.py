@@ -1,18 +1,19 @@
 import tkinter as tk
 import requests
-
+from dotenv import load_dotenv
+import os
 # Maak het hoofdvenster
 root = tk.Tk()
 root.configure(bg="#FFFF00")
 root.title("NS Arrivals")
 root.geometry("500x500")
-
+load_dotenv()
 # Definieer de stations
 utrecht = 'ut'
 apeldoorn = 'apd'
 amsterdam = 'asd'
 stations = [utrecht, apeldoorn, amsterdam]
-
+api_key = os.getenv("API_KEY")
 # Functie om aankomsten op te halen en weer te geven
 def get_arrivals():
     station = station_listbox.get(station_listbox.curselection())  # Haal het geselecteerde station op
@@ -20,7 +21,7 @@ def get_arrivals():
 
     headers = {
         "Cache-Control": "no-cache",
-        "Ocp-Apim-Subscription-Key": "d21c11c455cf4b238048aafb0178a7e7"
+        f"Ocp-Apim-Subscription-Key":api_key
     }
 
     response = requests.get(url, headers=headers)

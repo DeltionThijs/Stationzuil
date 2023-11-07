@@ -2,23 +2,35 @@ import tkinter as tk
 from tkinter import ttk
 import psycopg2
 import requests
+from dotenv import load_dotenv
+import os
+load_dotenv()
 # Maak het hoofdvenster
 root = tk.Tk()
 root.title("Stationshalscherm")
 root.configure(bg="#FFFF00")
 stations = ['Amsterdam', 'Utrecht', 'Den Haag']
+dbname = os.getenv("dbname")
+user = os.getenv("user")
+password = os.getenv("password")
+host = os.getenv("host")
+port = os.getenv("port")
 
 # PostgreSQL-databaseconfiguratie
 db_params = {
-    'dbname': 'stationzuil',
-    'user': 'postgres',
-    'password': 'TJluyt123!',
-    'host': '51.107.201.216',
-    'port': '5432'
+    'dbname': dbname,
+    'user': user,
+    'password': password,
+    'host': host,
+    'port': port
 }
 
+
+
+
+
 # OpenWeatherMap API-sleutel
-api_key = 'f662d7e76c05f726fed0413d66484c84'
+api_key = os.getenv("API_KEY2")
 # Verbindingsparameters voor de database
 conn = psycopg2.connect(**db_params)
 cursor = conn.cursor()
