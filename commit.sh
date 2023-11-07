@@ -1,5 +1,5 @@
 
-  git config --global user.email "thijs.luyten@outlook.com"
+  git config --global user.email "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@github.com"
   git config --global user.name "DeltionThijs"
 
 
