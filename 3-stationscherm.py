@@ -9,13 +9,14 @@ load_dotenv()
 root = tk.Tk()
 root.title("Stationshalscherm")
 root.configure(bg="#FFFF00")
+# stations
 stations = ['Amsterdam', 'Utrecht', 'Den Haag']
+# De dotenv protectie voor het niet exposen van gevoelige gegeven
 dbname = os.getenv("dbname")
 user = os.getenv("user")
 password = os.getenv("password")
 host = os.getenv("host")
 port = os.getenv("port")
-
 # PostgreSQL-databaseconfiguratie
 db_params = {
     'dbname': dbname,
@@ -24,11 +25,6 @@ db_params = {
     'host': host,
     'port': port
 }
-
-
-
-
-
 # OpenWeatherMap API-sleutel
 api_key = os.getenv("API_KEY2")
 # Verbindingsparameters voor de database
