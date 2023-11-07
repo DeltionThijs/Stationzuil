@@ -13,6 +13,7 @@ utrecht = 'ut'
 apeldoorn = 'apd'
 amsterdam = 'asd'
 stations = [utrecht, apeldoorn, amsterdam]
+# De dotenv protectie voor het niet exposen van gevoelige gegevens
 api_key = os.getenv("API_KEY")
 # Functie om aankomsten op te halen en weer te geven
 def get_arrivals():
