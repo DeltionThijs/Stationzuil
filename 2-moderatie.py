@@ -4,6 +4,8 @@ import psycopg2
 from datetime import datetime
 from dotenv import load_dotenv
 import os
+
+# De dotenv protectie voor het niet exposen van gevoelige gegeven
 load_dotenv()
 dbname = os.getenv("dbname")
 user = os.getenv("user")
