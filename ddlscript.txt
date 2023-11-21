@@ -1,9 +1,9 @@
 CREATE TABLE berichten (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     bericht TEXT,
     goedgekeurd BOOLEAN,
+    afgekeurd BOOLEAN,
     datum_tijd_goedgekeurd TIMESTAMP,
-    moderator_naam VARCHAR(255),
-    moderator_email VARCHAR(255),
-	afgekeurd BOOLEAN
+    moderator_naam TEXT,
+    moderator_email TEXT
 );
